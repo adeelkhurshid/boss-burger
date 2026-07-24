@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Boss Burger | Premium Gourmet Burgers, Fresh Fast Food & Luxury Dining Experience</title>
+  <meta name="description" content="Discover Boss Burger, premium handcrafted gourmet burgers made with fresh ingredients, flame-grilled Angus beef, signature sauces, crispy fries, and luxury fast-food experiences. Order online and enjoy restaurant-quality burgers delivered fresh.">
+  <meta name="keywords" content="Premium Burger, Gourmet Burger, Luxury Burger Restaurant, Best Burger Near Me, Fresh Burger, Angus Beef Burger, Handmade Burger, Burger Delivery, Gourmet Fast Food, Restaurant Website, Food Landing Page, Premium Restaurant, American Diner, Burger Menu, Crispy Fries, Chicken Bites, Restaurant Design, Food Photography, Interactive Website, 3D Scroll Animation, GSAP Animation, Modern Restaurant Website, Award Winning Website, Food Website Inspiration">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://bossburger.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Boss Burger | Premium Gourmet Burgers">
+  <meta property="og:description" content="Premium handcrafted gourmet burgers made fresh every day. Flame-grilled Angus beef, signature sauces, and luxury dining experience.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bossburger.com/">
+  <meta property="og:image" content="assets/images/menu-classic-burger.png">
+  <meta property="og:site_name" content="Boss Burger">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Boss Burger | Premium Gourmet Burgers">
+  <meta name="twitter:description" content="Premium handcrafted gourmet burgers. Fresh. Hot. Made to Love.">
+  <meta name="twitter:image" content="assets/images/menu-classic-burger.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🍔</text></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Structured Data: Restaurant -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Boss Burger",
+    "image": "assets/images/menu-classic-burger.png",
+    "description": "Premium handcrafted gourmet burgers made with fresh ingredients and flame-grilled Angus beef.",
+    "servesCuisine": ["American", "Burgers", "Fast Food"],
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Gourmet Lane",
+      "addressLocality": "New York",
+      "addressRegion": "NY",
+      "postalCode": "10001",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "11:00",
+        "closes": "23:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday","Sunday"],
+        "opens": "10:00",
+        "closes": "00:00"
+      }
+    ],
+    "menu": "https://bossburger.com/menu",
+    "acceptsReservations": "True"
+  }
+  </script>
+
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Boss Burger",
+    "url": "https://bossburger.com",
+    "logo": "assets/images/menu-classic-burger.png",
+    "sameAs": [
+      "https://instagram.com/bossburger",
+      "https://twitter.com/bossburger",
+      "https://facebook.com/bossburger"
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What makes Boss Burger premium?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every Boss Burger is handcrafted with 100% Angus beef, flame-grilled to perfection, and topped with fresh ingredients and our signature Boss Sauce."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Boss Burger offer delivery?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we offer premium delivery with our insulated luxury packaging to ensure your burger arrives fresh, hot, and perfectly presented."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bossburger.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Menu", "item": "https://bossburger.com/menu" },
+      { "@type": "ListItem", "position": 3, "name": "Order", "item": "https://bossburger.com/order" }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- ============================================================
+       PRELOADER
+       ============================================================ -->
+  <div class="preloader" id="preloader" aria-label="Loading">
+    <div class="preloader__logo">Boss Burger</div>
+    <div class="preloader__bar-track">
+      <div class="preloader__bar-fill" id="preloader-fill"></div>
+    </div>
+    <div class="preloader__percent" id="preloader-percent">0% LOADING</div>
+  </div>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <a href="#" class="navbar__brand" id="nav-brand">Boss Burger</a>
+    <ul class="navbar__links">
+      <li><a href="#menu" id="nav-menu">Menu</a></li>
+      <li><a href="#story" id="nav-story">Our Story</a></li>
+      <li><a href="#testimonials" id="nav-reviews">Reviews</a></li>
+      <li><a href="#footer" id="nav-contact">Contact</a></li>
+      <li><a href="#promo" class="navbar__cta" id="nav-order">Order Now</a></li>
+    </ul>
+    <div class="navbar__hamburger" id="nav-hamburger" aria-label="Menu toggle">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       CANVAS (Frame Sequence)
+       ============================================================ -->
+  <div class="canvas-container" id="canvas-container">
+    <canvas id="hero-canvas" aria-label="Cinematic burger animation"></canvas>
+  </div>
+
+  <!-- ============================================================
+       SCROLL SPACER (drives the canvas animation)
+       ============================================================ -->
+  <div class="scroll-spacer" id="scroll-spacer">
+
+    <!-- ---- Scene 0: Hero Text Overlay ---- -->
+    <div class="scene-overlay hero-overlay" id="hero-overlay">
+      <h1 class="hero-overlay__headline">
+        <span>Fresh.</span>
+        <span>Hot.</span>
+        <span>Made to Love.</span>
+      </h1>
+      <p class="hero-overlay__sub">
+        Premium handcrafted gourmet burgers made fresh every day with
+        flame-grilled Angus beef, signature sauces, and the finest ingredients.
+      </p>
+      <div class="hero-overlay__ctas">
+        <a href="#promo" class="btn btn--primary" id="hero-cta-order">
+          <span>Order Now</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#menu" class="btn btn--secondary" id="hero-cta-menu">View Menu</a>
+      </div>
+    </div>
+
+    <!-- ---- Scene 1: From The Grill ---- -->
+    <div class="scene-text" id="scene-grill" style="bottom:15%; left:8%;">
+      <div class="scene-text__label">Scene 01</div>
+      <div class="scene-text__title">Born From<br>Fire</div>
+    </div>
+
+    <!-- ---- Scene 2: Macro / Craftsmanship ---- -->
+    <div class="scene-text" id="scene-macro" style="top:20%; right:8%; text-align:right;">
+      <div class="scene-text__label">The Craft</div>
+      <div class="scene-text__title">Crafted to<br>Perfection</div>
+    </div>
+
+    <!-- ---- Scene 3: Exploded View Title ---- -->
+    <div class="scene-text" id="scene-exploded" style="top:8%; left:50%; transform:translateX(-50%); text-align:center;">
+      <div class="scene-text__label">Every Layer Matters</div>
+      <div class="scene-text__title">The Anatomy<br>of a Boss Burger</div>
+    </div>
+
+    <!-- ---- Scene 3: Ingredient Labels ---- -->
+    <div class="ingredient-labels" id="ingredient-labels">
+      <div class="ingredient-label ingredient-label--right" data-layer="bun-top">Fresh Sesame Bun</div>
+      <div class="ingredient-label" data-layer="sauce">Signature Sauce</div>
+      <div class="ingredient-label ingredient-label--right" data-layer="onion">Red Onion Rings</div>
+      <div class="ingredient-label" data-layer="tomato">Vine Tomato</div>
+      <div class="ingredient-label ingredient-label--right" data-layer="lettuce">Crisp Lettuce</div>
+      <div class="ingredient-label" data-layer="cheese">Aged Cheddar</div>
+      <div class="ingredient-label ingredient-label--right" data-layer="patty">Angus Beef Patty</div>
+      <div class="ingredient-label" data-layer="boss-sauce">Boss Sauce</div>
+      <div class="ingredient-label ingredient-label--right" data-layer="bun-bottom">Toasted Bottom Bun</div>
+    </div>
+
+    <!-- ---- Scene 4: Assembly ---- -->
+    <div class="scene-text" id="scene-assembly" style="top:50%; left:50%; transform:translate(-50%,-50%); text-align:center;">
+      <div class="scene-text__label">Perfectly Assembled</div>
+      <div class="scene-text__title">Built to<br>Satisfy</div>
+    </div>
+
+    <!-- ---- Scene 5: The Boss Box ---- -->
+    <div class="scene-text" id="scene-box" style="bottom:20%; left:8%;">
+      <div class="scene-text__label">Premium Packaging</div>
+      <div class="scene-text__title">The Boss<br>Box</div>
+    </div>
+
+    <!-- ---- Scene 6: Final CTA Over Canvas ---- -->
+    <div class="scene-text" id="scene-final" style="top:50%; left:50%; transform:translate(-50%,-50%); text-align:center;">
+      <div class="scene-text__label">Limited Edition</div>
+      <div class="scene-text__title" style="font-size:clamp(3rem,10vw,7rem);">Order<br>Now</div>
+      <div style="margin-top:24px; display:flex; justify-content:center;">
+        <a href="#promo" class="btn btn--gold" id="final-cta">Get Yours Today</a>
+      </div>
+    </div>
+
+    <!-- Particles -->
+    <div class="particles-container" id="particles-container"></div>
+
+  </div><!-- end .scroll-spacer -->
+
+  <!-- ============================================================
+       SCROLL INDICATOR
+       ============================================================ -->
+  <div class="scroll-indicator" id="scroll-indicator">
+    <span class="scroll-indicator__text">Scroll</span>
+    <span class="scroll-indicator__line"></span>
+  </div>
+
+  <!-- ============================================================
+       SCENE 6: PROMO BANNER
+       ============================================================ -->
+  <section class="section promo-banner" id="promo" aria-label="Promotional banner">
+    <div class="promo-banner__bg"></div>
+    <div class="promo-banner__kicker">Limited Edition • Premium Quality</div>
+    <h2 class="promo-banner__headline">Order Now</h2>
+    <p class="promo-banner__sub">Handcrafted Gourmet Burgers • Fresh Ingredients • Delivered Premium</p>
+    <a href="#menu" class="btn btn--gold" id="promo-cta">Explore the Menu</a>
+  </section>
+
+  <!-- ============================================================
+       SCENE 7: TESTIMONIALS
+       ============================================================ -->
+  <section class="section testimonials" id="testimonials" aria-label="Customer reviews">
+    <div class="section__container">
+      <div class="section__label">What People Say</div>
+      <h2 class="section__title">Real Reviews,<br>Real Love</h2>
+
+      <div class="testimonials__grid">
+        <!-- Card 1 -->
+        <article class="testimonial-card" id="testimonial-1">
+          <div class="testimonial-card__stars">★ ★ ★ ★ ★</div>
+          <p class="testimonial-card__text">
+            "The best burger I've ever had. The flame-grilled Angus beef patty was
+            juicy and perfectly seasoned. The Boss Sauce is absolutely divine. This
+            isn't fast food — this is an experience."
+          </p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">JM</div>
+            <div>
+              <div class="testimonial-card__name">James Mitchell</div>
+              <div class="testimonial-card__role">Food Blogger</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="testimonial-card" id="testimonial-2">
+          <div class="testimonial-card__stars">★ ★ ★ ★ ★</div>
+          <p class="testimonial-card__text">
+            "Premium quality from the first bite. The packaging alone made me feel
+            like I ordered from a 5-star restaurant. The cheese stretch is unreal.
+            Boss Burger has ruined every other burger for me."
+          </p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">SR</div>
+            <div>
+              <div class="testimonial-card__name">Sarah Rodriguez</div>
+              <div class="testimonial-card__role">Verified Customer</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="testimonial-card" id="testimonial-3">
+          <div class="testimonial-card__stars">★ ★ ★ ★ ★</div>
+          <p class="testimonial-card__text">
+            "Ordered the Boss Box for a date night at home and it was incredible.
+            The crispy fries, the chicken bites, and that burger — absolute perfection.
+            We order every weekend now."
+          </p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">DK</div>
+            <div>
+              <div class="testimonial-card__name">David Kim</div>
+              <div class="testimonial-card__role">Loyal Customer</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SCENE 8: MENU
+       ============================================================ -->
+  <section class="section menu" id="menu" aria-label="Menu">
+    <div class="section__container">
+      <div class="section__label">The Menu</div>
+      <h2 class="section__title">Crafted for<br>Every Craving</h2>
+
+      <div class="menu__grid">
+        <!-- Classic Boss Burger -->
+        <article class="menu-card" id="menu-classic">
+          <div class="menu-card__image">
+            <img src="assets/images/menu-classic-burger.png" alt="The Classic Boss Burger with flame-grilled Angus beef" loading="lazy" width="600" height="450">
+            <span class="menu-card__badge">Bestseller</span>
+          </div>
+          <div class="menu-card__body">
+            <h3 class="menu-card__name">The Classic Boss</h3>
+            <p class="menu-card__desc">Double flame-grilled Angus beef, aged cheddar, fresh lettuce, vine tomato, red onion &amp; Boss Sauce on a toasted sesame bun.</p>
+            <div class="menu-card__footer">
+              <span class="menu-card__price">$14.99</span>
+              <button class="menu-card__add" aria-label="Add to order" id="add-classic">+</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Crispy Chicken Boss -->
+        <article class="menu-card" id="menu-chicken">
+          <div class="menu-card__image">
+            <img src="assets/images/menu-chicken-burger.png" alt="Crispy Chicken Boss burger with spicy mayo" loading="lazy" width="600" height="450">
+            <span class="menu-card__badge">New</span>
+          </div>
+          <div class="menu-card__body">
+            <h3 class="menu-card__name">Crispy Chicken Boss</h3>
+            <p class="menu-card__desc">Golden crispy chicken fillet, house-made coleslaw, pickles, spicy sriracha mayo on a brioche bun.</p>
+            <div class="menu-card__footer">
+              <span class="menu-card__price">$13.49</span>
+              <button class="menu-card__add" aria-label="Add to order" id="add-chicken">+</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Veggie Boss -->
+        <article class="menu-card" id="menu-veggie">
+          <div class="menu-card__image">
+            <img src="assets/images/menu-veggie-burger.png" alt="Gourmet Veggie Boss burger with portobello" loading="lazy" width="600" height="450">
+          </div>
+          <div class="menu-card__body">
+            <h3 class="menu-card__name">The Veggie Boss</h3>
+            <p class="menu-card__desc">Grilled portobello mushroom, roasted peppers, avocado, arugula &amp; goat cheese on an artisan bun.</p>
+            <div class="menu-card__footer">
+              <span class="menu-card__price">$12.99</span>
+              <button class="menu-card__add" aria-label="Add to order" id="add-veggie">+</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Boss Fries -->
+        <article class="menu-card" id="menu-fries">
+          <div class="menu-card__image">
+            <img src="assets/images/menu-loaded-fries.png" alt="Golden crispy Boss Fries" loading="lazy" width="600" height="450">
+          </div>
+          <div class="menu-card__body">
+            <h3 class="menu-card__name">Boss Fries</h3>
+            <p class="menu-card__desc">Triple-cooked golden fries, seasoned with our secret spice blend. Served with signature Boss dipping sauce.</p>
+            <div class="menu-card__footer">
+              <span class="menu-card__price">$5.99</span>
+              <button class="menu-card__add" aria-label="Add to order" id="add-fries">+</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Chicken Bites -->
+        <article class="menu-card" id="menu-bites">
+          <div class="menu-card__image">
+            <img src="assets/images/menu-chicken-bites.png" alt="Crispy golden chicken bites" loading="lazy" width="600" height="450">
+          </div>
+          <div class="menu-card__body">
+            <h3 class="menu-card__name">Boss Bites</h3>
+            <p class="menu-card__desc">Hand-breaded crispy chicken bites, marinated 24 hours. Served with honey mustard and BBQ sauce.</p>
+            <div class="menu-card__footer">
+              <span class="menu-card__price">$7.99</span>
+              <button class="menu-card__add" aria-label="Add to order" id="add-bites">+</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Cold Cola -->
+        <article class="menu-card" id="menu-cola">
+          <div class="menu-card__image">
+            <img src="assets/images/menu-cola-drink.png" alt="Ice-cold cola with condensation" loading="lazy" width="600" height="450">
+          </div>
+          <div class="menu-card__body">
+            <h3 class="menu-card__name">Boss Cola</h3>
+            <p class="menu-card__desc">Ice-cold premium craft cola. Served with hand-cut ice and a hint of vanilla. The perfect companion.</p>
+            <div class="menu-card__footer">
+              <span class="menu-card__price">$3.99</span>
+              <button class="menu-card__add" aria-label="Add to order" id="add-cola">+</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SCENE 9: OUR STORY
+       ============================================================ -->
+  <section class="section story" id="story" aria-label="Our story">
+    <div class="section__container">
+      <div class="story__grid">
+        <div class="story__image reveal">
+          <img src="assets/images/restaurant-interior.png" alt="Boss Burger luxury restaurant interior with warm ambient lighting" loading="lazy" width="800" height="500">
+        </div>
+        <div class="story__content">
+          <div class="section__label reveal">Our Story</div>
+          <h2 class="section__title reveal">Where Passion<br>Meets Fire</h2>
+          <p class="reveal">
+            Boss Burger was born from a simple belief: fast food doesn't have to
+            be ordinary. Every burger we craft is a celebration of quality ingredients,
+            flame-grilled perfection, and the kind of attention to detail you'd expect
+            from a fine-dining kitchen.
+          </p>
+          <p class="reveal">
+            From our hand-selected Angus beef to our house-made signature sauces,
+            every element is designed to deliver an experience — not just a meal.
+            We believe that great food deserves great presentation, and every Boss Box
+            that leaves our kitchen is a testament to that philosophy.
+          </p>
+          <div class="story__stat-grid reveal">
+            <div class="story__stat">
+              <div class="story__stat-number">100%</div>
+              <div class="story__stat-label">Angus Beef</div>
+            </div>
+            <div class="story__stat">
+              <div class="story__stat-number">24hr</div>
+              <div class="story__stat-label">Marination</div>
+            </div>
+            <div class="story__stat">
+              <div class="story__stat-number">50K+</div>
+              <div class="story__stat-label">Happy Customers</div>
+            </div>
+            <div class="story__stat">
+              <div class="story__stat-number">4.9</div>
+              <div class="story__stat-label">Average Rating</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second Story Row -->
+      <div class="story__grid" style="margin-top:var(--space-3xl);">
+        <div class="story__content" style="order:-1;">
+          <div class="section__label reveal">The Kitchen</div>
+          <h2 class="section__title reveal">Crafted by<br>Hand, Grilled<br>with Soul</h2>
+          <p class="reveal">
+            Our chefs don't just cook — they create. Every patty is hand-formed,
+            every bun is toasted to golden perfection, and every sauce is mixed
+            fresh daily. When you see those grill marks and smell that smoke,
+            you know you're about to experience something special.
+          </p>
+        </div>
+        <div class="story__image reveal">
+          <img src="assets/images/chef-portrait.png" alt="Boss Burger chef grilling burgers with dramatic flame lighting" loading="lazy" width="800" height="500">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SCENE 10: FOOTER
+       ============================================================ -->
+  <footer class="section footer" id="footer" aria-label="Site footer">
+    <div class="section__container">
+      <div class="footer__top">
+        <!-- Brand column -->
+        <div class="reveal">
+          <div class="footer__brand">Boss Burger</div>
+          <p class="footer__tagline">
+            Premium handcrafted gourmet burgers made fresh every day.
+            Fresh. Hot. Made to Love.
+          </p>
+          <div class="footer__socials">
+            <a href="#" class="footer__social-icon" id="social-ig" aria-label="Instagram">IG</a>
+            <a href="#" class="footer__social-icon" id="social-tw" aria-label="Twitter">TW</a>
+            <a href="#" class="footer__social-icon" id="social-fb" aria-label="Facebook">FB</a>
+            <a href="#" class="footer__social-icon" id="social-yt" aria-label="YouTube">YT</a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="reveal">
+          <h3 class="footer__heading">Quick Links</h3>
+          <ul class="footer__links">
+            <li><a href="#menu" id="footer-menu">Menu</a></li>
+            <li><a href="#story" id="footer-story">Our Story</a></li>
+            <li><a href="#testimonials" id="footer-reviews">Reviews</a></li>
+            <li><a href="#" id="footer-careers">Careers</a></li>
+            <li><a href="#" id="footer-franchise">Franchise</a></li>
+          </ul>
+        </div>
+
+        <!-- Hours & Location -->
+        <div class="reveal">
+          <h3 class="footer__heading">Visit Us</h3>
+          <ul class="footer__links">
+            <li><a href="#">123 Gourmet Lane, NY</a></li>
+            <li><a href="#">Mon–Fri: 11AM – 11PM</a></li>
+            <li><a href="#">Sat–Sun: 10AM – 12AM</a></li>
+            <li><a href="tel:+15551234567">+1 (555) 123-4567</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="reveal">
+          <h3 class="footer__heading">Stay Updated</h3>
+          <p style="font-size:0.85rem; color:rgba(255,248,240,.4); margin-bottom:var(--space-sm);">
+            Get exclusive deals, new menu drops, and secret sauce recipes.
+          </p>
+          <div class="footer__newsletter-input">
+            <input type="email" placeholder="Your email" id="newsletter-email" aria-label="Email for newsletter">
+            <button type="button" id="newsletter-submit">Join</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>&copy; 2026 Boss Burger. All Rights Reserved.</span>
+        <span>Crafted with 🔥 &amp; ❤️</span>
+        <span>
+          <a href="#" id="footer-privacy">Privacy</a> &nbsp;•&nbsp;
+          <a href="#" id="footer-terms">Terms</a> &nbsp;•&nbsp;
+          <a href="#" id="footer-cookies">Cookies</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       STICKY CTA
+       ============================================================ -->
+  <div class="sticky-cta" id="sticky-cta">
+    <a href="#promo" class="btn btn--primary" id="sticky-order-btn">
+      🍔 Order Now
+    </a>
+  </div>
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+  <!-- GSAP Core -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <!-- ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- ScrollTo Plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <!-- App -->
+  <script src="script.js"></script>
+  <!-- Vercel Web Analytics -->
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
