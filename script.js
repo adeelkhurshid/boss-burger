@@ -107,9 +107,12 @@
      3. CANVAS RENDERER
      ---------------------------------------------------------- */
   function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    renderFrame(Math.round(currentFrameObj.index));
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.floor(window.innerWidth * dpr);
+    canvas.height = Math.floor(window.innerHeight * dpr);
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = "high";
+    renderFrame(currentFrameObj.index);
   }
 
   function renderFrame(index) {
@@ -160,6 +163,15 @@
     ctx.drawImage(img, drawX, drawY, drawW, drawH);
   }
 
+  let animationFrameId = null;
+
+  function scheduleRender(index) {
+    if (animationFrameId) cancelAnimationFrame(animationFrameId);
+    animationFrameId = requestAnimationFrame(() => {
+      renderFrame(index);
+    });
+  }
+
   window.addEventListener("resize", resizeCanvas);
   resizeCanvas();
 
@@ -182,7 +194,7 @@
         end: "bottom bottom",
         scrub: 0.3,
         onUpdate: function () {
-          renderFrame(currentFrameObj.index);
+          scheduleRender(currentFrameObj.index);
         },
       },
     });
