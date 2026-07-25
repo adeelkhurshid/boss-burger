@@ -110,8 +110,8 @@
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     canvas.width = Math.floor(window.innerWidth * dpr);
     canvas.height = Math.floor(window.innerHeight * dpr);
-    ctx.imageSmoothingEnabled = true;
-    ctx.imageSmoothingQuality = "high";
+    canvas.style.width = window.innerWidth + "px";
+    canvas.style.height = window.innerHeight + "px";
     renderFrame(currentFrameObj.index);
   }
 
@@ -140,23 +140,29 @@
   }
 
   function drawImage(img) {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = "high";
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Cover-fit the image
+    const logicalW = window.innerWidth;
+    const logicalH = window.innerHeight;
     const imgRatio = img.naturalWidth / img.naturalHeight;
-    const canvasRatio = canvas.width / canvas.height;
+    const canvasRatio = logicalW / logicalH;
 
     let drawW, drawH, drawX, drawY;
 
     if (canvasRatio > imgRatio) {
-      drawW = canvas.width;
-      drawH = canvas.width / imgRatio;
+      drawW = logicalW * dpr;
+      drawH = (logicalW / imgRatio) * dpr;
       drawX = 0;
-      drawY = (canvas.height - drawH) / 2;
+      drawY = ((logicalH - (logicalW / imgRatio)) / 2) * dpr;
     } else {
-      drawH = canvas.height;
-      drawW = canvas.height * imgRatio;
-      drawX = (canvas.width - drawW) / 2;
+      drawH = logicalH * dpr;
+      drawW = (logicalH * imgRatio) * dpr;
+      drawX = ((logicalW - (logicalH * imgRatio)) / 2) * dpr;
       drawY = 0;
     }
 
